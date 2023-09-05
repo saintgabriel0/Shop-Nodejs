@@ -1,10 +1,12 @@
+const path = require('path');
 const express = require('express');
 
 const router = express.Router();
 
 
-router.use('/shop', (req, res, next) => {
-    res.send('<h1>Hello Express</h1>');
+router.get('/', (req, res, next) => {
+    //! called path to show the html
+    res.sendFile(path.join(__dirname, './', 'views', 'shop.html'));
 });
 
 
